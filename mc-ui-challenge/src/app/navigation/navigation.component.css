@@ -1,0 +1,10 @@
+.dark-gray-bg {
+    background-color: darkgray;
+}
+.padded-bg {
+    padding: 10px;
+}
+.btn-custom {
+    margin-right: 10px;
+    padding: 1px 10px;
+}
