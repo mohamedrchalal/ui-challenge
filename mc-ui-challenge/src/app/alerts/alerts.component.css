@@ -1,0 +1,15 @@
+.right-aligned {
+    left: 50%;
+}
+.rounded-search-bar {
+    border-radius: 15px;
+    padding: 1px 1px 1px 10px;
+    border: 2px #000 solid;
+}
+.bordered {
+    border: 2px #000 solid;
+    padding: 5px;
+}
+.table-custom th, .table-custom td {
+    padding: .70rem;
+}
