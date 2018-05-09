@@ -1,12 +1,38 @@
 <div>
     <h3>Filters</h3>
-    <div>
-        Severity
+    <div class="filter-section">
+        <a href (click)="filter($event, {attribute: 'Reset', value: ''})">Reset</a>
     </div>
-    <div>
-        Protocol
+    <div class="filter-section">
+        <div class="underline">
+            <span>Severity</span>
+        </div>
+        <a href class="block-link" (click)="filter($event, {attribute: 'Severity', value: 'High'})">High</a>
+        <a href class="block-link" (click)="filter($event, {attribute: 'Severity', value: 'Low'})">Low</a>
+        <a href class="block-link" (click)="filter($event, {attribute: 'Severity', value: 'Medium'})">Medium</a>
     </div>
-    <div>
-        Client IP
+    <div class="filter-section">
+        <div class="underline">
+            <span>Protocol</span>
+        </div>
+        <a href class="block-link" (click)="filter($event, {attribute: 'Protocol', value: 'HTTP'})">HTTP</a>
+        <a href class="block-link" (click)="filter($event, {attribute: 'Protocol', value: 'FTP'})">FTP</a>
+        <a href class="block-link" (click)="filter($event, {attribute: 'Protocol', value: 'SMTP'})">SMTP</a>
+    </div>
+    <div class="filter-section">
+        <div class="underline">
+            <span>ClientIP</span>
+        </div>
+        <a href class="block-link" (click)="filter($event, {attribute: 'ClientIP', value: '155.175.121.134'})">155.175.121.134</a>
+        <a href class="block-link" (click)="filter($event, {attribute: 'ClientIP', value: '66.78.200.140'})">66.78.200.140</a>
+        <a href class="block-link" (click)="filter($event, {attribute: 'ClientIP', value: '43.172.24.178'})">43.172.24.178</a>
+    </div>
+    <div class="filter-section">
+        <div class="underline">
+            <span>ClientIP</span>
+        </div>
+        <a href class="block-link" (click)="filter($event, {attribute: 'ClientCountry', value: 'Canada'})">Canada</a>
+        <a href class="block-link" (click)="filter($event, {attribute: 'ClientCountry', value: 'Germany'})">Germany</a>
+        <a href class="block-link" (click)="filter($event, {attribute: 'ClientCountry', value: 'United States'})">United States</a>
     </div>
 </div>

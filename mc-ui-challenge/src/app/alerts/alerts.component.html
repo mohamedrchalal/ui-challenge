@@ -1,10 +1,9 @@
 <div class="row bordered">
-  <div class="col-sm-2">Alerts</div>  
-  <div class="col-sm-4 right-aligned">
-    <input type="text" class="rounded-search-bar" placeholder="search">
+  <div class="col-sm-12"><span class="text-left large-bold">Alerts ({{ alerts?.length }})</span>
+    <!-- <div class="text-right right-align-inline-content"><input type="text" class="rounded-search-bar" placeholder="search"></div> -->
   </div>
 </div>
-<div class="row bordered">
+<div class="row bordered no-top-border scrollable">
   <table class="table table-striped table-custom">
     <tr>
       <th>AlertId</th>
@@ -15,6 +14,14 @@
       <th>Protocol</th>
       <th>ClientCountry</th>
     </tr>
-    <tr *ngFor=""></tr>
+    <tr *ngFor="let alert of alerts">
+      <td (click)="selectAlert(alert)">{{ alert?.AlertId }}</td>
+      <td (click)="selectAlert(alert)">{{ alert?.AlertTime }}</td>
+      <td (click)="selectAlert(alert)">{{ alert?.Severity }}</td>
+      <td (click)="selectAlert(alert)">{{ alert?.ClientIP }}</td>
+      <td (click)="selectAlert(alert)">{{ alert?.ServerIP }}</td>
+      <td (click)="selectAlert(alert)">{{ alert?.Protocol }}</td>
+      <td (click)="selectAlert(alert)">{{ alert?.ClientCountry }}</td>
+    </tr>
   </table>
 </div>

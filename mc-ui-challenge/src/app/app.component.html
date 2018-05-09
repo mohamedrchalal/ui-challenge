@@ -1,18 +1,22 @@
 <div class="container-fluid no-padding full-height">
+
   <div class="row">
     <div class="col-sm-12">
       <app-navigation></app-navigation>
     </div>
   </div>
+
   <div class="row full-height">
-    <div class="col-sm-2">
-      <app-filters></app-filters>
+    <div class="col-sm-2 left-box-border">
+      <app-filters (onFilter)="filterAlerts($event.attribute, $event.value)"></app-filters>
     </div>
+    
     <div class="col-sm-7">
-      <app-alerts></app-alerts>
+      <app-alerts [alerts]="alerts" (onSelectAlert)="selectAlert($event)"></app-alerts>
     </div>
-    <div class="col-sm-3">
-      <app-details></app-details>
+
+    <div class="col-sm-3 left-box-border">
+      <app-details [detailedAlert]="detailedAlert"></app-details>
     </div>
   </div>
 </div>

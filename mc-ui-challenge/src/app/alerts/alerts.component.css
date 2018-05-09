@@ -5,11 +5,28 @@
     border-radius: 15px;
     padding: 1px 1px 1px 10px;
     border: 2px #000 solid;
+    outline: none;
 }
 .bordered {
     border: 2px #000 solid;
     padding: 5px;
 }
+.no-top-border {
+    border-top: 0;
+    border-bottom: 0;
+}
 .table-custom th, .table-custom td {
     padding: .70rem;
+}
+.scrollable {
+    height: 100%;
+    overflow: scroll;
+}
+.right-align-inline-content {
+    display: inline-block;
+    width: 80%;
+}
+.large-bold {
+    font-size: 23px;
+    font-weight: bold;
 }

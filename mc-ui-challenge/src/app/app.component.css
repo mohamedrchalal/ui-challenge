@@ -4,3 +4,11 @@
 .full-height {
     height: 100%;
 }
+.left-box-border {
+    padding-top: 2px;
+    border-top: 2px #000 solid;
+    padding-left: 23px;
+}
+.right-box-border {
+    border-top: 2px #000 solid;
+}

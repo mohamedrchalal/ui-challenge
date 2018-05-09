@@ -1,0 +1,12 @@
+.large-bold {
+    font-size: 23px;
+    font-weight: bold;
+}
+.underlined {
+    border-bottom: 1px #000 solid;
+    padding: 4px 10px;
+    margin-bottom: 15px;
+}
+.detail-row {
+    margin-bottom: 15px;
+}
