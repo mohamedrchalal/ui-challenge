@@ -1,6 +1,6 @@
 <div class="row bordered">
   <div class="col-sm-12"><span class="text-left large-bold">Alerts ({{ alerts?.length }})</span>
-    <!-- <div class="text-right right-align-inline-content"><input type="text" class="rounded-search-bar" placeholder="search"></div> -->
+    <div class="text-right right-align-inline-content"><input type="text" class="rounded-search-bar" placeholder="search" [(ngModel)]="searchTerm" (keydown.enter)="sumbitSearch(searchTerm)"></div>
   </div>
 </div>
 <div class="row bordered no-top-border scrollable">
@@ -17,7 +17,10 @@
     <tr *ngFor="let alert of alerts">
       <td (click)="selectAlert(alert)">{{ alert?.AlertId }}</td>
       <td (click)="selectAlert(alert)">{{ alert?.AlertTime }}</td>
-      <td (click)="selectAlert(alert)">{{ alert?.Severity }}</td>
+      <td (click)="selectAlert(alert)" 
+          [ngClass]="{'text-success': (alert.Severity === 'Low'), 'text-warning': (alert.Severity === 'Medium'), 'text-danger': (alert.Severity === 'High')}">
+          {{ alert?.Severity }}
+      </td>
       <td (click)="selectAlert(alert)">{{ alert?.ClientIP }}</td>
       <td (click)="selectAlert(alert)">{{ alert?.ServerIP }}</td>
       <td (click)="selectAlert(alert)">{{ alert?.Protocol }}</td>

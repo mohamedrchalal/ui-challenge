@@ -9,6 +9,9 @@ import { AlertModel } from '../models/alert.model';
 export class AlertsComponent implements OnInit {
   @Input() alerts: [AlertModel]
   @Output() onSelectAlert = new EventEmitter<AlertModel>();
+  @Output() onSubmitSearch = new EventEmitter<string>();
+
+  public searchTerm;
 
   constructor() { }
   
@@ -17,5 +20,9 @@ export class AlertsComponent implements OnInit {
 
   selectAlert(alert: AlertModel) {
     this.onSelectAlert.emit(alert)
+  }
+
+  sumbitSearch(term){
+    this.onSubmitSearch.emit(term)
   }
 }

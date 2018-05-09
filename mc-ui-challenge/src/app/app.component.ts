@@ -9,10 +9,12 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
   constructor(private _alertsService: AlertsService) { }
+
   // Initialize variables that will be injected into children components
   public alerts;
-  private totalAlerts;
+  public totalAlerts;
   public detailedAlert;
+
   // Call alerts service here, so that we are only making one http request per page load
   ngOnInit() {
     this._alertsService.getAlerts().subscribe(
@@ -21,6 +23,7 @@ export class AppComponent {
       () => console.log('done')    
     )
   }
+
   /**
    * Filter results by attribute and value, or reset if attribute is = to 'reset'
    * @param attribute which attribute to filter on
@@ -38,6 +41,7 @@ export class AppComponent {
       this.detailedAlert = this.alerts[0];
     }
   }
+
   /**
    * resets alerts to total alerts, and resets detailed(or currently selected alert) to its default (first element in alerts array)
    */
@@ -45,11 +49,34 @@ export class AppComponent {
     this.alerts = this.totalAlerts;
     this.detailedAlert = this.alerts[0]
   }
+
   /**
    * Select individual alert, trigered by child component event emitter
    * @param alert alert object, model definition in models/alert.model
    */
   selectAlert(alert){
     this.detailedAlert = alert;
+  }
+
+  filterBySearch(term){
+    let lowerCaseTerm = term ? term.toLowerCase() : '';
+    
+    if (!lowerCaseTerm) {
+      this.alerts = this.totalAlerts;
+    } else {
+      this.alerts = this.totalAlerts.filter((el) => {
+        let isTermPresent = (
+          el.AlertId == lowerCaseTerm ||
+          el.AlertTime.toLowerCase() === lowerCaseTerm ||
+          el.Severity.toLowerCase() === lowerCaseTerm ||
+          el.ClientIP.toLowerCase() === lowerCaseTerm ||
+          el.ServerIP.toLowerCase() === lowerCaseTerm ||
+          el.Protocol.toLowerCase() === lowerCaseTerm ||
+          el.ClientCountry.toLowerCase() === lowerCaseTerm
+        );
+  
+        return isTermPresent;
+      })
+    }
   }
 }

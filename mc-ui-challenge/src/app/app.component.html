@@ -12,11 +12,11 @@
     </div>
     
     <div class="col-sm-7">
-      <app-alerts [alerts]="alerts" (onSelectAlert)="selectAlert($event)"></app-alerts>
+      <app-alerts [alerts]="alerts" (onSubmitSearch)="filterBySearch($event)" (onSelectAlert)="selectAlert($event)"></app-alerts>
     </div>
 
     <div class="col-sm-3 left-box-border">
-      <app-details [detailedAlert]="detailedAlert"></app-details>
+      <app-details [totalAlerts]="totalAlerts" [detailedAlert]="detailedAlert"></app-details>
     </div>
   </div>
 </div>

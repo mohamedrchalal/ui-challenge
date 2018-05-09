@@ -36,3 +36,14 @@
     <div class="col-sm-6">Client Country</div>
     <div class="col-sm-6">{{ detailedAlert?.ClientCountry }}</div>
 </div>
+
+<div class="row underlined">
+    <div class="large-bold">Stats</div>
+</div>
+
+<div class="row">
+    <p>The country with the most High Severity alerts is <span class="text-success">{{ totalAlerts ? getMostHighsCountry(totalAlerts) : '...' }}</span>.</p>
+</div>
+<div class="row">
+    <p>The most used protocol is <span class="text-success">{{ totalAlerts ? getMostUsedProtocol(totalAlerts) : '...' }}</span>.</p>
+</div>
